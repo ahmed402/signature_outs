@@ -166,6 +166,7 @@ function copy() {
           <input
             id="consentement"
             type="checkbox"
+            disabled
             v-model="data.consentement"
           />
         </div>
