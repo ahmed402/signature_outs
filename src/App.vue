@@ -8,16 +8,22 @@ let data = ref({
   consentement: false,
   pays: {
     MAROC: {
-      fixe: "+212 5 22 99 99 99",
+      fixe: "+212 5 22 95 34 80",
       mobile: "+212 6 99 99 99 99",
       adresse: "217, Boulevard Anfa",
       cp: "21000 Casablanca",
     },
     FRANCE: {
-      fixe: "+33 1 99 99 99 99",
+      fixe: "+33 1 76 60 21 80",
       mobile: "+33 9 99 99 99 99",
       adresse: "23, rue Lavoisier",
       cp: "27 000 Evreux",
+    },
+    MADAGASCAR: {
+      fixe: "+261 20 22 572 21",
+      mobile: "+261 9 99 99 99 99",
+      adresse: "Enceinte Somalco, ZI Forello - Tanjombato",
+      cp: "Antananarivo 102, Madagascar",
     },
   },
 });
@@ -97,63 +103,41 @@ function copy() {
             class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
           />
         </div>
-        MAROC :
-        <div class="mb-5">
-          <label
-            for="fixemaroc"
-            class="mb-3 block text-base font-medium text-[#07074D]"
-          >
-            fixe
-          </label>
-          <input
-            id="fixemaroc"
-            type="text"
-            v-model="data.pays.MAROC.fixe"
-            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-          />
-        </div>
-        <div class="mb-5">
-          <label
-            for="mobilemaroc"
-            class="mb-3 block text-base font-medium text-[#07074D]"
-          >
-            mobile
-          </label>
-          <input
-            id="mobilemaroc"
-            type="text"
-            v-model="data.pays.MAROC.mobile"
-            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-          />
-        </div>
-        FRANCE :
-        <div class="mb-5">
-          <label
-            for="fixefrance"
-            class="mb-3 block text-base font-medium text-[#07074D]"
-          >
-            fixe
-          </label>
-          <input
-            id="fixefrance"
-            type="text"
-            v-model="data.pays.FRANCE.fixe"
-            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-          />
-        </div>
-        <div class="mb-5">
-          <label
-            for="mobilefrance"
-            class="mb-3 block text-base font-medium text-[#07074D]"
-          >
-            mobile
-          </label>
-          <input
-            id="mobilefrance"
-            type="text"
-            v-model="data.pays.FRANCE.mobile"
-            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-          />
+
+        <div
+          v-for="(d, pay) in data.pays"
+          :key="pay"
+          style="border-bottom: 1px solid #cdcdcd"
+        >
+          {{ pay }} :
+          <div class="mb-5 ml-5">
+            <label
+              for="fixepay"
+              class="mb-3 block text-base font-medium text-[#07074D]"
+            >
+              fixe
+            </label>
+            <input
+              id="fixepay"
+              type="text"
+              v-model="d.fixe"
+              class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+          </div>
+          <div class="mb-5 ml-5">
+            <label
+              for="mobilepay"
+              class="mb-3 block text-base font-medium text-[#07074D]"
+            >
+              mobile
+            </label>
+            <input
+              id="mobilepay"
+              type="text"
+              v-model="d.mobile"
+              class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+          </div>
         </div>
 
         <div class="mb-5">
@@ -282,62 +266,71 @@ function copy() {
             >
               <tr>
                 <template v-for="(d, pay) in data.pays" :index="pay">
-                  <td style="padding-right: 10px">
-                    <span
-                      style="color: #ff8f1f; font-size: 12px; font-weight: 500"
-                      >{{ pay }}</span
+                  <template v-if="d.fixe || d.mobile">
+                    <td style="padding-right: 10px">
+                      <span
+                        style="
+                          color: #ff8f1f;
+                          font-size: 12px;
+                          font-weight: 500;
+                        "
+                        >{{ pay }}</span
+                      >
+                    </td>
+                    <td
+                      style="color: #83818a; font-size: 12px; font-weight: 600"
                     >
-                  </td>
-                  <td style="color: #83818a; font-size: 12px; font-weight: 600">
-                    <p style="margin: 1px">
-                      <img
-                        v-if="d.fixe"
-                        style="margin-right: 5px"
-                        alt="phone"
-                        src="https://outsourcia-signature.netlify.app/assets/icons/phone.png"
-                      />
-                      <span
-                        v-if="d.fixe"
-                        style="margin-right: 10px; white-space: nowrap"
-                        v-text="d.fixe"
-                      ></span>
-                      <img
-                        v-if="d.mobile"
-                        style="margin-right: 5px; white-space: nowrap"
-                        alt="phone"
-                        src="https://outsourcia-signature.netlify.app/assets/icons/smartphone.png"
-                      />
-                      <span
-                        v-if="d.mobile"
-                        style="white-space: nowrap"
-                        v-text="d.mobile"
-                      ></span>
-                    </p>
-                    <p style="margin: 1px">
-                      <img
-                        style="margin-right: 5px"
-                        alt="geo"
-                        src="https://outsourcia-signature.netlify.app/assets/icons/geo.png"
-                      />
-                      <span
-                        style="
-                          margin: 0 5px;
-                          padding-right: 5px;
-                          white-space: nowrap;
-                        "
-                        v-text="d.adresse"
-                      ></span>
-                      <span
-                        style="
-                          height: 5px;
-                          border: 1px solid rgb(255, 143, 31);
-                          font-size: 9px;
-                          margin: 0px 5px;
-                        "
-                      ></span>
-                      <span style="white-space: nowrap" v-text="d.cp"></span>
-                    </p>
-                  </td>
+                      <p style="margin: 1px">
+                        <img
+                          v-if="d.fixe"
+                          style="margin-right: 5px"
+                          alt="phone"
+                          src="https://outsourcia-signature.netlify.app/assets/icons/phone.png"
+                        />
+                        <span
+                          v-if="d.fixe"
+                          style="margin-right: 10px; white-space: nowrap"
+                          v-text="d.fixe"
+                        ></span>
+                        <img
+                          v-if="d.mobile"
+                          style="margin-right: 5px; white-space: nowrap"
+                          alt="phone"
+                          src="https://outsourcia-signature.netlify.app/assets/icons/smartphone.png"
+                        />
+                        <span
+                          v-if="d.mobile"
+                          style="white-space: nowrap"
+                          v-text="d.mobile"
+                        ></span>
+                      </p>
+                      <p style="margin: 1px">
+                        <img
+                          style="margin-right: 5px"
+                          alt="geo"
+                          src="https://outsourcia-signature.netlify.app/assets/icons/geo.png"
+                        />
+                        <span
+                          style="
+                            margin: 0 5px;
+                            padding-right: 5px;
+                            white-space: nowrap;
+                          "
+                          v-text="d.adresse"
+                        ></span>
+                        <span
+                          style="
+                            height: 5px;
+                            border: 1px solid rgb(255, 143, 31);
+                            font-size: 9px;
+                            margin: 0px 5px;
+                          "
+                        ></span>
+                        <span style="white-space: nowrap" v-text="d.cp"></span>
+                      </p>
+                    </td>
+                    <td><p style="margin: 5px"></p></td>
+                  </template>
                 </template>
               </tr>
             </table>
