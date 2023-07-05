@@ -5,7 +5,7 @@ let data = ref({
   prenom: "Prénom",
   mail: "mail@outsourcia-group.com",
   fonction: "Fonction",
-  consentement: false,
+  consentement: true,
   pays: {
     MAROC: {
       fixe: "+212 5 22 95 34 80",
@@ -27,6 +27,9 @@ let data = ref({
     },
   },
 });
+let isChrome =
+  /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+
 function copy() {
   let elem = document.querySelector("#signature");
   let str = elem.innerHTML;
@@ -43,7 +46,7 @@ function copy() {
 }
 </script>
 <template>
-  <div class="flex items-center mx-auto justify-center p-12">
+  <div class="flex items-center mx-auto justify-center p-12" v-if="!isChrome">
     <div class="w-full max-w-[550px] bg-white">
       <form class="py-6 px-9" action="" method="POST" @submit.prevent="copy">
         <div class="mb-5">
@@ -112,13 +115,13 @@ function copy() {
           {{ pay }} :
           <div class="mb-5 ml-5">
             <label
-              for="fixepay"
+              for="pay_fixe"
               class="mb-3 block text-base font-medium text-[#07074D]"
             >
               fixe
             </label>
             <input
-              id="fixepay"
+              id="pay_fixe"
               type="text"
               v-model="d.fixe"
               class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
@@ -126,15 +129,43 @@ function copy() {
           </div>
           <div class="mb-5 ml-5">
             <label
-              for="mobilepay"
+              for="pay_mobile"
               class="mb-3 block text-base font-medium text-[#07074D]"
             >
               mobile
             </label>
             <input
-              id="mobilepay"
+              id="pay_mobile"
               type="text"
               v-model="d.mobile"
+              class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+          </div>
+          <div class="mb-5 ml-5">
+            <label
+              for="pay_adresse"
+              class="mb-3 block text-base font-medium text-[#07074D]"
+            >
+              adresse
+            </label>
+            <input
+              id="pay_adresse"
+              type="text"
+              v-model="d.adresse"
+              class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+          </div>
+          <div class="mb-5 ml-5">
+            <label
+              for="pay_cp"
+              class="mb-3 block text-base font-medium text-[#07074D]"
+            >
+              cp
+            </label>
+            <input
+              id="pay_cp"
+              type="text"
+              v-model="d.cp"
               class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
             />
           </div>
@@ -150,7 +181,6 @@ function copy() {
           <input
             id="consentement"
             type="checkbox"
-            disabled
             v-model="data.consentement"
           />
         </div>
@@ -352,7 +382,7 @@ function copy() {
               "
             >
               <tbody>
-                <tr style="line-height: 13px">
+                <tr style="line-height: 13px; font-size: 11px">
                   <td valign="middle" style="vertical-align: middle">
                     <a
                       href="https://www.outsourcia.com/actualites"
@@ -488,14 +518,7 @@ function copy() {
                     l'expéditeur.<br />Si vous avez reçu ce message par erreur,
                     veuillez répondre à ce message et suivre sa suppression,
                     afin que nous puissions nous assurer qu'une telle erreur ne
-                    se reproduise plus à l'avenir.<br /><br />The content of
-                    this email is confidential and intended for the recipient
-                    specified in message only. It is strictly forbidden to share
-                    any part of this message with any third party, without a
-                    written consent of the sender.<br />If you received this
-                    message by mistake, please reply to this message and follow
-                    with its deletion, so that we can ensure such a mistake does
-                    not occur in the future.<br />---
+                    se reproduise plus à l'avenir.<br />---
                   </p>
                 </td>
               </tr>
@@ -506,6 +529,12 @@ function copy() {
         <!---->
       </table>
     </div>
+  </div>
+  <div v-if="isChrome" class="w-full text-center p-12">
+    Merci d'utiliser le navigateur
+    <a class="text-blue-600" href="https://www.mozilla.org/fr/firefox/new/"
+      >Firefox</a
+    >
   </div>
 </template>
 
