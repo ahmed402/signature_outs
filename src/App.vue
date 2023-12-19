@@ -463,9 +463,10 @@ function copy() {
                       v-text="data.fonction"
                     ></p>
                   </td>
-                  <td style="padding-left: 40px; width: 100%">
+                  <td style="padding-left: 40px">
                     <img
-                      src="https://outsourcia-signature.netlify.app/assets/logo.svg"
+                      src="https://outsourcia-signature.netlify.app/assets/logo.png"
+                      style="width: 170px; height: 60px"
                       alt="Logo OUTSOURCIA"
                     />
                   </td>
