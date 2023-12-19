@@ -466,7 +466,7 @@ function copy() {
                   <td style="padding-left: 40px">
                     <img
                       src="https://outsourcia-signature.netlify.app/assets/logo.png"
-                      style="width: 170px; height: 60px"
+                      style="width: 145px; height: 37px"
                       alt="Logo OUTSOURCIA"
                     />
                   </td>
