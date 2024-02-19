@@ -1,6 +1,7 @@
 <script setup>
 import { computed, ref } from "vue";
 let data = ref({
+  company: "",
   nom: "Nom",
   prenom: "Prénom",
   mail: "mail@outsourcia-group.com",
@@ -65,6 +66,22 @@ function copy() {
       @submit.prevent="copy"
     >
       <div class="flex-1">
+        <div class="relative mb-6">
+          <select
+            id="company"
+            v-model="data.company"
+            class="block py-2.5 ps-6 pe-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-800 focus:outline-none focus:ring-0 focus:border-orange-600 peer"
+            placeholder=" "
+          >
+            <option value="">OUTSOURCIA</option>
+            <option value="_stefi">STEFI</option>
+          </select>
+          <label
+            for="company"
+            class="absolute text-sm text-gray-800 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:start-6 peer-focus:start-0 peer-focus:text-orange-600 peer-focus:dark:text-orange-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+            >Company</label
+          >
+        </div>
         <div class="relative mb-6">
           <div
             class="absolute inset-y-0 start-0 flex items-center ps-1 pointer-events-none"
@@ -465,7 +482,11 @@ function copy() {
                   </td>
                   <td style="padding-left: 40px">
                     <img
-                      src="https://outsourcia-signature.netlify.app/assets/logo.png"
+                      :src="
+                        'https://outsourcia-signature.netlify.app/assets/logo' +
+                        data.company +
+                        '.png'
+                      "
                       style="width: 145px; height: 37px"
                       alt="Logo OUTSOURCIA"
                     />
