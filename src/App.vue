@@ -1,12 +1,13 @@
 <script setup>
-import { computed, ref } from "vue";
+import { ref, watch } from "vue";
+let company = ref("");
 let data = ref({
-  company: "",
   nom: "Nom",
   prenom: "Prénom",
   mail: "mail@outsourcia-group.com",
   fonction: "Fonction",
   consentement: true,
+  listPays: ["FRANCE", "MAROC", "TUNISIE", "MADAGASCAR"],
   pays: {
     FRANCE: {
       enabled: true,
@@ -39,6 +40,16 @@ let data = ref({
   },
 });
 
+watch(company, (newCompany) => {
+  data.value.listPays.map((e) => (data.value.pays[e].enabled = false));
+  if (newCompany == "stefi") {
+    data.value.pays.MADAGASCAR.enabled = true;
+  } else {
+    data.value.pays.FRANCE.enabled = true;
+    data.value.pays.MAROC.enabled = true;
+  }
+});
+
 let isChrome =
   /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 
@@ -69,7 +80,7 @@ function copy() {
         <div class="relative mb-6">
           <select
             id="company"
-            v-model="data.company"
+            v-model="company"
             class="block py-2.5 ps-6 pe-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orange-800 focus:outline-none focus:ring-0 focus:border-orange-600 peer"
             placeholder=" "
           >
@@ -482,7 +493,7 @@ function copy() {
                   </td>
                   <td style="padding-left: 40px">
                     <img
-                      v-if="data.company == 'stefi'"
+                      v-if="company == 'stefi'"
                       :src="'https://outsourcia-signature.netlify.app/assets/logo_stefi.png'"
                       style="width: 145px; height: 50px"
                       alt="Logo STEFI"
