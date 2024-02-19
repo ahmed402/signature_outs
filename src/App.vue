@@ -74,7 +74,7 @@ function copy() {
             placeholder=" "
           >
             <option value="">OUTSOURCIA</option>
-            <option value="_stefi">STEFI</option>
+            <option value="stefi">STEFI</option>
           </select>
           <label
             for="company"
@@ -482,11 +482,14 @@ function copy() {
                   </td>
                   <td style="padding-left: 40px">
                     <img
-                      :src="
-                        'https://outsourcia-signature.netlify.app/assets/logo' +
-                        data.company +
-                        '.png'
-                      "
+                      v-if="data.company == 'stefi'"
+                      :src="'https://outsourcia-signature.netlify.app/assets/logo_stefi.png'"
+                      style="width: 145px; height: 50px"
+                      alt="Logo STEFI"
+                    />
+                    <img
+                      v-else
+                      :src="'https://outsourcia-signature.netlify.app/assets/logo.png'"
                       style="width: 145px; height: 37px"
                       alt="Logo OUTSOURCIA"
                     />
