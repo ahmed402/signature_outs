@@ -482,7 +482,7 @@ function copy() {
                           <td style="font-weight: 600">
                             <div v-text="data.mail"></div>
 
-                            <a href="https://www.outsourcia.com"
+                            <a href="https://www.outsourcia.com" target="_blank"
                               >www.outsourcia.com</a
                             >
                           </td>
@@ -571,16 +571,16 @@ function copy() {
               </tr>
               <tr>
                 <td>
-                  <img
+                  <a ><img
                     style="margin-right: 10px"
                     src="assets/assets2/Twitter.png"
                     alt="twitter"
-                  />
-                  <img
+                  /></a>
+                  <a href="https://www.linkedin.com/company/groupe-outsourcia/" target="_blank"><img
                     style="margin-right: 10px"
                     src="assets/assets2/Linkedin.png"
                     alt="linkedin"
-                  />
+                  /></a>
                   <img
                     style="margin-right: 10px"
                     src="assets/assets2/Facebook.png"
