@@ -431,7 +431,12 @@ function copy() {
         cellpadding="0"
         cellspacing="0"
         border="0"
-        style="font-size: 11px; background-color: #070d23; color: white"
+        style="
+          font-size: 11px;
+          background-color: #070d23;
+          color: white;
+          min-width: 700px;
+        "
       >
         <tbody>
           <tr>
@@ -442,6 +447,7 @@ function copy() {
                   margin-top: 15px;
                   font-family: 'Trebuchet MS', sans-serif;
                   font-size: 25px;
+                  white-space: nowrap;
                 "
                 v-text="data.prenom + ' ' + data.nom"
               ></div>
