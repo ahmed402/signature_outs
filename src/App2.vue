@@ -269,7 +269,7 @@ function copy() {
           <td style="min-width: 200px; vertical-align: top">
             <div style="
                 height: 80px;
-                background: url('assets/assets2/bg_2.png') no-repeat 100% 0;
+                background: url('https://outsourcia-signature.netlify.app/assets/assets2/bg_2.png') no-repeat 100% 0;
               ">
             </div>
           </td>
@@ -280,7 +280,7 @@ function copy() {
                 margin: 0;
                 padding: 0;
                 height: 180px;
-                background: url('assets/assets2/bg_1.png') no-repeat -85px 20px;
+                background: url('https://outsourcia-signature.netlify.app/assets/assets2/bg_1.png') no-repeat -85px 20px;
                 background-size: 120%;
               ">
             </p>
@@ -294,7 +294,7 @@ function copy() {
                       <td>
                     <tr>
                       <td style="min-width: 20px">
-                        <img src="assets/assets2/web-icon.png" />
+                        <img src="https://outsourcia-signature.netlify.app/assets/assets2/web-icon.png" />
                       </td>
                       <td style="font-weight: 600">
                         <div v-text="data.mail"></div>
@@ -318,7 +318,7 @@ function copy() {
                       <table>
                         <tr>
                           <td style="min-width: 20px; padding-bottom: 15px">
-                            <img src="assets/assets2/phone-icon.png" alt="phone" />
+                            <img src="https://outsourcia-signature.netlify.app/assets/assets2/phone-icon.png" alt="phone" />
                           </td>
                           <td style="padding-bottom: 15px">
                             <span v-text="d.fixe"></span>
@@ -328,7 +328,7 @@ function copy() {
                         </tr>
                         <tr>
                           <td>
-                            <img src="assets/assets2/adress-icon.png" alt="adress" />
+                            <img src="https://outsourcia-signature.netlify.app/assets/assets2/adress-icon.png" alt="adress" />
                           </td>
                           <td>
                             <span v-text="d.adresse"></span>
@@ -339,7 +339,7 @@ function copy() {
                         <tr>
                           <td></td>
                           <td style="text-align: center">
-                            <img :src="'assets/assets2/' + d.flag + '.svg'" alt="morocco" />
+                            <img :src="'https://outsourcia-signature.netlify.app/assets/assets2/' + d.flag + '.svg'" alt="morocco" />
                           </td>
                         </tr>
                       </table>
@@ -358,27 +358,27 @@ function copy() {
           <tr>
             <td>
               <a v-if="company == 'stefi'" href="https://www.stefi-outsourcia.com/" target="_blank"> <!--to select the logo and link depending on the selected company-->
-                <img v-if="company == 'stefi'" src="assets/logo_stefi_white.png" style="width: 145px; height: 45px"
+                <img v-if="company == 'stefi'" src="https://outsourcia-signature.netlify.app/assets/logo_stefi_white.png" style="width: 145px; height: 45px"
                   alt="Logo STEFI" /></a>
               <a v-else href="https://www.outsourcia.com/" target="_blank">
-                <img src="assets/assets2/LOGO.png" style="width: 145px; height: 37px" alt="Logo OUTSOURCIA" /></a><br /><br />
+                <img src="https://outsourcia-signature.netlify.app/assets/assets2/LOGO.png" style="width: 145px; height: 37px" alt="Logo OUTSOURCIA" /></a><br /><br />
             </td>
           </tr>
           <tr>
             <td>
               <a href="https://twitter.com/Outsourcia" target="_blank"><img style="margin-right: 10px"
-                  src="assets/assets2/Twitter.png" alt="twitter" /></a>
+                  src="https://outsourcia-signature.netlify.app/assets/assets2/Twitter.png" alt="twitter" /></a>
               <a href="https://www.linkedin.com/company/groupe-outsourcia/" target="_blank"><img
-                  style="margin-right: 10px" src="assets/assets2/Linkedin.png" alt="linkedin" /></a>
+                  style="margin-right: 10px" src="https://outsourcia-signature.netlify.app/assets/assets2/Linkedin.png" alt="linkedin" /></a>
               <a href="https://web.facebook.com/Outsourcia" target="_blank"><img style="margin-right: 10px"
-                  src="assets/assets2/Facebook.png" alt="facebook" /></a>
+                  src="https://outsourcia-signature.netlify.app/assets/assets2/Facebook.png" alt="facebook" /></a>
               <a href="https://www.instagram.com/outsourcia_maroc/" target="_blank"><img style="margin-right: 10px"
-                  src="assets/assets2/Instagram.png" alt="instagram" /></a><br /><br />
+                  src="https://outsourcia-signature.netlify.app/assets/assets2/Instagram.png" alt="instagram" /></a><br /><br />
             </td>
           </tr>
           <tr>
             <td>
-              <a href="https://www.youtube.com/watch?v=eXqpfZY_3nk" target="_blank"><img src="assets/assets2/video.png"
+              <a href="https://www.youtube.com/watch?v=eXqpfZY_3nk" target="_blank"><img src="https://outsourcia-signature.netlify.app/assets/assets2/video.png"
                   alt="video" /></a>
             </td>
           </tr>
