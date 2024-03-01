@@ -425,266 +425,274 @@ function copy() {
       </div>
     </form>
 
-    <div id="signature" class="mx-auto w-fit max-w-screen-lg overflow-x-auto">
-      <table
-        class="gmail-signature"
-        cellpadding="0"
-        cellspacing="0"
-        border="0"
-        style="
-          font-size: 11px;
-          background-color: #070d23;
-          color: white;
-          min-width: 700px;
-        "
-      >
-        <tbody>
-          <tr>
-            <td style="min-width: 200px"></td>
-            <td>
-              <div
-                style="
-                  margin-top: 15px;
-                  font-family: 'Trebuchet MS', sans-serif;
-                  font-size: 25px;
-                  white-space: nowrap;
-                "
-                v-text="data.prenom + ' ' + data.nom"
-              ></div>
-              <div
-                style="
-                  font-family: 'Trebuchet MS', sans-serif;
-                  font-size: 18px;
-                  color: #ff8f1f;
-                  padding-bottom: 15px;
-                "
-                v-text="data.fonction"
-              ></div>
-            </td>
-            <td
-              style="
-                min-width: 200px;
-                vertical-align: top;
-                background: url('https://outsourcia-signature.netlify.app/assets/assets2/bg_2.png')
-                  no-repeat 100% 0;
-              "
-            ></td>
-          </tr>
-          <tr>
-            <td
-              style="
-                background: url('https://outsourcia-signature.netlify.app/assets/assets2/bg_1.png')
-                  no-repeat -80px 0px;
-                background-size: 120%;
-              "
-            ></td>
-            <td style="vertical-align: top; padding-bottom: 20px">
-              <table
-                cellspacing="0"
-                cellpadding="0"
-                style="border-right: 2px solid #ff8f1f; width: 100%"
-              >
-                <tbody>
-                  <tr>
-                    <td style="padding: 0 0 15px 0">
-                      <table cellpadding="0" cellspacing="0">
-                        <tr>
-                          <td style="min-width: 20px">
-                            <img
-                              src="https://outsourcia-signature.netlify.app/assets/assets2/web-icon.png"
-                            />
-                          </td>
-                          <td style="font-weight: 600">
-                            <a
-                              style="
-                                color: white !important;
-                                text-decoration: none !important;
-                                display: block;
-                              "
-                              v-text="data.mail"
-                            ></a>
-                            <a
-                              v-if="company == 'stefi'"
-                              href="https://www.stefi-outsourcia.com/"
-                              style="
-                                color: white !important;
-                                text-decoration: none !important;
-                              "
-                              target="_blank"
-                              >www.stefi-outsourcia.com</a
-                            >
-                            <!-- to display the site of the current company selected -->
-                            <a
-                              v-else
-                              href="https://www.outsourcia.com"
-                              style="
-                                color: white !important;
-                                text-decoration: none !important;
-                              "
-                              target="_blank"
-                              >www.outsourcia.com</a
-                            >
-                          </td>
-                          <td width="20px">&nbsp;</td>
-                        </tr>
-                      </table>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <table cellpadding="0" cellspacing="0">
-                        <tbody>
-                          <tr>
-                            <template v-for="(d, pay) in data.pays" :key="pay">
-                              <template v-if="d.enabled">
-                                <td>
-                                  <table cellpadding="0" cellspacing="0">
-                                    <tbody>
-                                      <tr>
-                                        <td
-                                          style="
-                                            min-width: 20px;
-                                            padding-bottom: 15px;
-                                          "
-                                        >
-                                          <img
-                                            src="https://outsourcia-signature.netlify.app/assets/assets2/phone-icon.png"
-                                            alt="phone"
-                                          />
-                                        </td>
-                                        <td style="padding-bottom: 15px">
-                                          <span v-text="d.fixe"></span>
-                                          <br />
-                                          <span v-text="d.mobile"></span>
-                                        </td>
-                                      </tr>
-                                      <tr>
-                                        <td>
-                                          <img
-                                            src="https://outsourcia-signature.netlify.app/assets/assets2/adress-icon.png"
-                                            alt="adress"
-                                          />
-                                        </td>
-                                        <td>
-                                          <span v-text="d.adresse"></span>
-                                          <br />
-                                          <span v-text="d.cp"></span>
-                                        </td>
-                                      </tr>
-                                      <tr>
-                                        <td></td>
-                                        <td style="text-align: center">
-                                          <img
-                                            :src="
-                                              'https://outsourcia-signature.netlify.app/assets/assets2/' +
-                                              d.flag +
-                                              '.png'
-                                            "
-                                            :alt="pay"
-                                          />
-                                        </td>
-                                      </tr>
-                                    </tbody>
-                                  </table>
-                                </td>
-                                <td style="width: 30px"></td>
-                              </template>
-                            </template>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-            <td style="vertical-align: top; padding: 0 0 0 15px">
-              <table cellpadding="0" cellspacing="0">
-                <tbody>
-                  <tr>
-                    <td>
-                      <a
-                        v-if="company == 'stefi'"
-                        href="https://www.stefi-outsourcia.com/"
-                        target="_blank"
-                      >
-                        <!--to select the logo and link depending on the selected company-->
+  <div id="signature" class="mx-auto w-fit max-w-screen-lg overflow-x-auto">
+  <table
+    class="gmail-signature"
+    cellpadding="0"
+    cellspacing="0"
+    border="0"
+    style="
+      font-size: 10px;
+      background-color: #070d23;
+      color: white;
+      min-width: 500px;
+    "
+  >
+    <tbody>
+      <tr>
+        <td style="min-width: 150px"></td>
+        <td>
+          <div
+            style="
+              margin-top: 2px;
+              font-family: 'Trebuchet MS', sans-serif;
+              font-size: 12pt;
+              white-space: nowrap;
+            "
+            v-text="data.prenom + ' ' + data.nom"
+          ></div>
+          <div
+            style="
+              font-family: 'Trebuchet MS', sans-serif;
+              font-size: 8pt;
+              color: #ff8f1f;
+              padding-bottom: 5px;
+            "
+            v-text="data.fonction"
+          ></div>
+        </td>
+        <td
+          style="
+            min-width: 150px;
+            vertical-align: top;
+            background: url('https://outsourcia-signature.netlify.app/assets/assets2/bg_2.png')
+              no-repeat 100% -0px;
+          "
+        ></td>
+      </tr>
+      <tr>
+        <td
+          style="
+            background: url('https://outsourcia-signature.netlify.app/assets/assets2/bg_1.png')
+              no-repeat -60px 5px;
+            background-size: 120%;
+          "
+        ></td>
+        <td style="vertical-align: top; padding-bottom: 5px">
+          <table
+            cellspacing="0"
+            cellpadding="0"
+            style="border-right: 2px solid #ff8f1f; padding-bottom:0px;padding-right:10px;"
+          >
+            <tbody>
+              <tr>
+                <td style="padding: 0 0 5px 0px">
+                  <table cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td style="min-width: 15px">
                         <img
+                          src="https://outsourcia-signature.netlify.app/assets/assets2/web-icon.png"
+                        />
+                      </td>
+                      <td style="font-weight: 600">
+                        <a
+                          style="
+                            color: white !important;
+                            text-decoration: none !important;
+                            font-size: 10px;
+                            display: block;
+                          "
+                          v-text="data.mail"
+                        ></a>
+                        <a
                           v-if="company == 'stefi'"
-                          src="https://outsourcia-signature.netlify.app/assets/logo_stefi_white.png"
-                          style="width: 145px; height: 45px"
-                          alt="Logo STEFI"
-                      /></a>
-                      <a
-                        v-else
-                        href="https://www.outsourcia.com/"
-                        target="_blank"
-                      >
-                        <img
-                          src="https://outsourcia-signature.netlify.app/assets/assets2/LOGO.png"
-                          style="width: 145px; height: 37px"
-                          alt="Logo OUTSOURCIA"
-                      /></a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td style="height: 25px">&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a href="https://twitter.com/Outsourcia" target="_blank"
-                        ><img
-                          style="margin-right: 10px"
-                          src="https://outsourcia-signature.netlify.app/assets/assets2/Twitter.png"
-                          alt="twitter"
-                      /></a>
-                      <a
-                        href="https://www.linkedin.com/company/groupe-outsourcia/"
-                        target="_blank"
-                        ><img
-                          style="margin-right: 10px"
-                          src="https://outsourcia-signature.netlify.app/assets/assets2/Linkedin.png"
-                          alt="linkedin"
-                      /></a>
-                      <a
-                        href="https://web.facebook.com/Outsourcia"
-                        target="_blank"
-                        ><img
-                          style="margin-right: 10px"
-                          src="https://outsourcia-signature.netlify.app/assets/assets2/Facebook.png"
-                          alt="facebook"
-                      /></a>
-                      <a
-                        href="https://www.instagram.com/outsourcia_maroc/"
-                        target="_blank"
-                        ><img
-                          style="margin-right: 10px"
-                          src="https://outsourcia-signature.netlify.app/assets/assets2/Instagram.png"
-                          alt="instagram"
-                      /></a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td style="height: 25px">&nbsp;</td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <a
-                        href="https://www.youtube.com/watch?v=eXqpfZY_3nk"
-                        target="_blank"
-                        ><img
-                          src="https://outsourcia-signature.netlify.app/assets/assets2/video.png"
-                          alt="video"
-                      /></a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+                          href="https://www.stefi-outsourcia.com/"
+                          style="
+                            color: white !important;
+                            text-decoration: none !important;
+                            font-size: 10px;
+                          "
+                          target="_blank"
+                          >www.stefi-outsourcia.com</a
+                        >
+                        <!-- to display the site of the current company selected -->
+                        <a
+                          v-else
+                          href="https://www.outsourcia.com"
+                          style="
+                            color: white !important;
+                            text-decoration: none !important;
+                            font-size: 10px;
+                          "
+                          target="_blank"
+                          >www.outsourcia.com</a
+                        >
+                      </td>
+                      <td width="20px">&nbsp;</td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <table cellpadding="0" cellspacing="0">
+                    <tbody>
+                      <tr>
+                        <template
+                          v-for="(d, pay) in data.pays"
+                          :key="pay"
+                        >
+                          <template v-if="d.enabled">
+                            <td>
+                              <table cellpadding="0" cellspacing="0">
+                                <tbody>
+                                  <tr>
+                                    <td
+                                      style="
+                                        min-width: 10px;
+                                        padding: 0px 0px 10px 4px;
+                                      "
+                                    >
+                                      <img
+                                        src="https://outsourcia-signature.netlify.app/assets/assets2/phone-icon.png"
+                                        alt="phone"
+                                        />
+                                    </td>
+                                    <td style="padding-bottom: 5px">
+                                      <span style="white-space:nowrap;color: white !important;text-decoration: none !important;" v-text="d.fixe"></span>
+                                      <br />
+                                      <span style="white-space:nowrap;color: white !important;text-decoration: none !important;" v-text="d.mobile"></span>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td style="min-width: 20px; padding:0px 0px 0px 5px;">
+                                      <img
+                                        src="https://outsourcia-signature.netlify.app/assets/assets2/adress-icon.png"
+                                        alt="adress"
+                                      />
+                                    </td>
+                                    <td>
+                                      <span style="white-space:nowrap;" v-text="d.adresse"></span>
+                                      <br />
+                                      <span style="white-space:nowrap;" v-text="d.cp"></span>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td></td>
+                                    <td style="text-align: center;padding: 5px 0 5px 0;">
+                                      <img
+                                        :src="
+                                          'https://outsourcia-signature.netlify.app/assets/assets2/' +
+                                          d.flag +
+                                          '.png'
+                                        "
+                                        :alt="pay"
+                                      />
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                            <td style="width: 10px"></td>
+                          </template>
+                        </template>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+        <td style="vertical-align: top; padding-left: 10px;">
+          <table cellpadding="0" cellspacing="0">
+            <tbody>
+              <tr>
+                <td>
+                  <a
+                    v-if="company == 'stefi'"
+                    href="https://www.stefi-outsourcia.com/"
+                    target="_blank"
+                  >
+                    <!--to select the logo and link depending on the selected company-->
+                    <img
+                      v-if="company == 'stefi'"
+                      src="https://outsourcia-signature.netlify.app/assets/logo_stefi_white.png"
+                      style="width: 120px; height: auto;"
+                      alt="Logo STEFI"
+                  /></a>
+                  <a
+                    v-else
+                    href="https://www.outsourcia.com/"
+                    target="_blank"
+                  >
+                    <img
+                      src="https://outsourcia-signature.netlify.app/assets/assets2/LOGO.png"
+                      style="width: 110px; height: auto;"
+                      alt="Logo OUTSOURCIA"
+                  /></a>
+                </td>
+              </tr>
+              <tr>
+                <td style="height: 20px">&nbsp;</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://twitter.com/Outsourcia" target="_blank"
+                    ><img
+                      style="margin-right: 5px;"
+                      src="https://outsourcia-signature.netlify.app/assets/assets2/Twitter.png"
+                      alt="twitter"
+                  /></a>
+                  <a
+                    href="https://www.linkedin.com/company/groupe-outsourcia/"
+                    target="_blank"
+                    ><img
+                      style="margin-right: 5px;"
+                      src="https://outsourcia-signature.netlify.app/assets/assets2/Linkedin.png"
+                      alt="linkedin"
+                  /></a>
+                  <a
+                    href="https://web.facebook.com/Outsourcia"
+                    target="_blank"
+                    ><img
+                      style="margin-right: 5px;"
+                      src="https://outsourcia-signature.netlify.app/assets/assets2/Facebook.png"
+                      alt="facebook"
+                  /></a>
+                  <a
+                    href="https://www.instagram.com/outsourcia_maroc/"
+                    target="_blank"
+                    ><img
+                      style="margin-right: 5px;"
+                      src="https://outsourcia-signature.netlify.app/assets/assets2/Instagram.png"
+                      alt="instagram"
+                  /></a>
+                </td>
+              </tr>
+              <tr>
+                <td style="height: 20px">&nbsp;</td>
+              </tr>
+              <tr>
+                <td>
+                  <a
+                    href="https://www.youtube.com/watch?v=eXqpfZY_3nk"
+                    target="_blank"
+                    ><img
+                      src="https://outsourcia-signature.netlify.app/assets/assets2/video.png"
+                      style="width: 100px; height: auto;"
+                      alt="video"
+                  /></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
     <br /><br />
   </div>
   <div v-if="isChrome" class="w-full text-center p-12">
