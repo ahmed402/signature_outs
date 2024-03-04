@@ -466,7 +466,7 @@ function copy() {
             min-width: 150px;
             vertical-align: top;
             background: url('https://outsourcia-signature.netlify.app/assets/assets2/bg_2.png')
-              no-repeat 100% -0px;
+              no-repeat 90% -10px;
           "
         ></td>
       </tr>
