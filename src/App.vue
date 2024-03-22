@@ -15,6 +15,7 @@ let data = ref({
       mobile: "+33 9 99 99 99 99",
       adresse: "23, rue Lavoisier",
       cp: "27 000 Evreux",
+      flag: "flag-france",
     },
     MAROC: {
       enabled: true,
@@ -22,6 +23,7 @@ let data = ref({
       mobile: "+212 6 99 99 99 99",
       adresse: "217, Boulevard Anfa",
       cp: "21000 Casablanca",
+      flag: "flag-morocco",
     },
     TUNISIE: {
       enabled: false,
@@ -29,6 +31,7 @@ let data = ref({
       mobile: "+216 9 99 99 99 99",
       adresse: "6 rue des entrepreneurs",
       cp: "2035 Charguia II",
+      flag: "flag-tunisie",
     },
     MADAGASCAR: {
       enabled: false,
@@ -36,6 +39,7 @@ let data = ref({
       mobile: "+261 9 99 99 99 99",
       adresse: "Enceinte Somalco, ZI Forello - Tanjombato",
       cp: "Antananarivo 102, Madagascar",
+      flag: "flag-madagascar",
     },
   },
 });
@@ -246,8 +250,7 @@ function copy() {
                 stroke-linejoin="round"
                 stroke-width="2"
                 d="m7.708 2.292.706-.706A2 2 0 0 1 9.828 1h6.239A.97.97 0 0 1 17 2v12a.97.97 0 0 1-.933 1H15M6 5v4a1 1 0 0 1-1 1H1m11-4v12a.97.97 0 0 1-.933 1H1.933A.97.97 0 0 1 1 18V9.828a2 2 0 0 1 .586-1.414l2.828-2.828A2 2 0 0 1 5.828 5h5.239A.97.97 0 0 1 12 6Z"
-              /></svg
-            ><span class="ml-2">Copy</span>
+              /></svg><span class="ml-2">Copy</span>
           </button>
           <br />
           <a
@@ -267,8 +270,7 @@ function copy() {
                 stroke-linejoin="round"
                 stroke-width="2"
                 d="M1 5h12m0 0L9 1m4 4L9 9"
-              ></path></svg
-          ></a>
+              ></path></svg></a>
         </p>
       </div>
       <div class="grid grid-cols-2 gap-5">
@@ -491,7 +493,7 @@ function copy() {
                       v-text="data.fonction"
                     ></p>
                   </td>
-                  <td style="padding-left: 40px">
+                  <td style="padding-left: 50px">
                     <img
                       v-if="company == 'stefi'"
                       :src="'https://outsourcia-signature.netlify.app/assets/logo_stefi.png'"
@@ -512,210 +514,88 @@ function copy() {
         </tr>
         <tr>
           <td>
-            <table
-              cellspacing="0"
-              cellpadding="0"
-              border="0"
-              style="
-                width: 100%;
-                white-space: nowrap;
-                border-spacing: 0;
-                margin-top: 10px;
-                font-size: 11px;
-                font-weight: 400;
-                line-height: 15px;
-              "
-            >
-              <tr>
-                <template v-for="(d, pay) in data.pays" :index="pay">
-                  <template v-if="d.enabled">
-                    <td style="padding-right: 10px; padding-left: 10px">
-                      <span
-                        style="
-                          color: #ff8f1f;
-                          font-size: 12px;
-                          font-weight: 500;
-                        "
-                        >{{ pay }}</span
-                      >
-                    </td>
-                    <td
-                      style="color: #83818a; font-size: 12px; font-weight: 600"
-                    >
-                      <p style="margin: 1px">
-                        <img
-                          v-if="d.fixe"
-                          style="margin-right: 5px"
-                          alt="phone"
-                          src="https://outsourcia-signature.netlify.app/assets/icons/phone.png"
-                        />
-                        <span
-                          v-if="d.fixe"
-                          style="margin-right: 10px; white-space: nowrap"
-                          v-text="d.fixe"
-                        ></span>
-                        <img
-                          v-if="d.mobile"
-                          style="margin-right: 5px; white-space: nowrap"
-                          alt="phone"
-                          src="https://outsourcia-signature.netlify.app/assets/icons/smartphone.png"
-                        />
-                        <span
-                          v-if="d.mobile"
-                          style="white-space: nowrap"
-                          v-text="d.mobile"
-                        ></span>
-                      </p>
-                      <p style="margin: 1px">
-                        <img
-                          style="margin-right: 5px"
-                          alt="geo"
-                          src="https://outsourcia-signature.netlify.app/assets/icons/geo.png"
-                        />
-                        <span
-                          style="
-                            margin: 0 5px;
-                            padding-right: 5px;
-                            white-space: nowrap;
-                          "
-                          v-text="d.adresse"
-                        ></span>
-                        <span
-                          style="
-                            height: 5px;
-                            border: 1px solid rgb(255, 143, 31);
-                            font-size: 9px;
-                            margin: 0px 5px;
-                          "
-                        ></span>
-                        <span style="white-space: nowrap" v-text="d.cp"></span>
-                      </p>
-                    </td>
-                    <td>
-                      <p style="margin: 5px"></p>
-                    </td>
-                  </template>
-                </template>
-              </tr>
-            </table>
+              <table cellspacing="0" cellpadding="0" border="0" style="width: 100%; white-space: nowrap; border-spacing: 0; margin-top: 10px; font-size: 11px; font-weight: 400; line-height: 15px;">
+                  <tr>
+                      <template v-for="(d, pay) in data.pays" :index="pay">
+                          <template v-if="d.enabled">
+                              <td style="padding-right: 10px; padding-left: 10px;">
+                                  <img :src="'https://outsourcia-signature.netlify.app/assets/assets2/' + d.flag + '.png'" :alt="pay" style="vertical-align: middle;">
+                              </td>
+                              <td style="color: #83818a; font-size: 12px; font-weight: 600; border-right: 1px solid #ff8f1f">
+                                  <p style="margin: 1px">
+                                      <img v-if="d.fixe" style="margin-right: 5px; vertical-align: middle;" alt="tel" src="https://outsourcia-signature.netlify.app/assets/icons/tel.png">
+                                      <span v-if="d.fixe" style="margin-right: 10px; white-space: nowrap; vertical-align: middle;" v-text="d.fixe"></span>
+                                      <img v-if="d.mobile" style="margin-right: 5px; white-space: nowrap; vertical-align: middle;" alt="portable" src="https://outsourcia-signature.netlify.app/assets/icons/portable.png">
+                                      <span v-if="d.mobile" style="white-space: nowrap; vertical-align: middle;" v-text="d.mobile"></span>
+                                  </p>
+                                  <p style="margin: 1px;">
+                                      <img style="margin-right: 5px; vertical-align: middle;" alt="geo" src="https://outsourcia-signature.netlify.app/assets/icons/geo.png">
+                                      <span style="margin: 0 5px; padding-right: 5px; white-space: nowrap; vertical-align: middle;" v-text="d.adresse"></span>
+                                      <span style="height: 5px; border: 1px solid rgb(255, 143, 31); font-size: 9px; margin: 0px 5px; vertical-align: middle;"></span>
+                                      <span style="white-space: nowrap; vertical-align: middle;" v-text="d.cp"></span>
+                                  </p>
+                              </td>
+                              <td>
+                                  <p style="margin-right: 5px"></p>
+                              </td>
+                          </template>
+                      </template>
+                  </tr>
+              </table>
           </td>
         </tr>
         <tr>
-          <td height="13"></td>
+            <td height="13"></td>
         </tr>
         <tr>
-          <td>
-            <table
-              cellspacing="10"
-              cellpadding="10"
-              style="
-                margin-left: 150px;
-                margin-top: 0;
-                color: rgb(131, 129, 138);
-                border-spacing: 0px;
-              "
-            >
-              <tbody>
-                <tr style="line-height: 13px; font-size: 11px">
-                  <td valign="middle" style="vertical-align: middle">
-                    <a
-                      href="https://www.outsourcia.com/actualites"
-                      style="
-                        text-decoration: none;
-                        color: rgb(131, 129, 138);
-                        margin: 0 2px 0 0px;
-                      "
-                      ><img
-                        height="13"
-                        alt="newsletter"
-                        src="https://outsourcia-signature.netlify.app/assets/icons/newsletter.png"
-                    /></a>
-                  </td>
-                  <td
-                    valign="middle"
-                    style="vertical-align: middle; padding-left: 5px"
-                  >
-                    <a
-                      href="https://www.outsourcia.com/actualites"
-                      style="text-decoration: none; color: rgb(131, 129, 138)"
-                      >NEWSLETTER</a
-                    >
-                  </td>
-                  <td valign="middle" style="vertical-align: middle">
-                    <a
-                      href="https://www.outsourcia.com/"
-                      style="
-                        text-decoration: none;
-                        color: rgb(131, 129, 138);
-                        margin: 0 2px 0 15px;
-                      "
-                      ><img
-                        height="13"
-                        alt="play"
-                        src="https://outsourcia-signature.netlify.app/assets/icons/play.png"
-                    /></a>
-                  </td>
-                  <td
-                    valign="middle"
-                    style="vertical-align: middle; padding-left: 5px"
-                  >
-                    <a
-                      href="https://www.outsourcia.com/"
-                      style="text-decoration: none; color: rgb(131, 129, 138)"
-                      >VIDEO</a
-                    >
-                  </td>
-                  <td valign="middle" style="vertical-align: middle">
-                    <a
-                      href="https://www.linkedin.com/company/groupe-outsourcia/"
-                      style="
-                        text-decoration: none;
-                        color: rgb(131, 129, 138);
-                        margin: 0 2px 0 15px;
-                      "
-                      ><img
-                        height="13"
-                        alt="linkedin"
-                        src="https://outsourcia-signature.netlify.app/assets/icons/linkedin.png"
-                    /></a>
-                  </td>
-                  <td
-                    valign="middle"
-                    style="vertical-align: middle; padding-left: 5px"
-                  >
-                    <a
-                      href="https://www.linkedin.com/company/groupe-outsourcia/"
-                      style="text-decoration: none; color: rgb(131, 129, 138)"
-                      >LINKEDIN</a
-                    >
-                  </td>
-                  <td valign="middle" style="vertical-align: middle">
-                    <a
-                      href="https://www.outsourcia.com/blog"
-                      style="
-                        text-decoration: none;
-                        color: rgb(131, 129, 138);
-                        margin: 0 2px 0 15px;
-                      "
-                      ><img
-                        height="13"
-                        src="https://outsourcia-signature.netlify.app/assets/icons/blog.png"
-                    /></a>
-                  </td>
-                  <td
-                    valign="middle"
-                    style="vertical-align: bottom; padding-left: 5px"
-                  >
-                    <a
-                      href="https://www.outsourcia.com/blog"
-                      style="text-decoration: none; color: rgb(131, 129, 138)"
-                      >BLOG</a
-                    >
-                  </td>
-                </tr>
+          
+            <td>
+                <table cellspacing="10" cellpadding="10" style="margin-top: 0; color: rgb(131, 129, 138); border-spacing: 5px;margin: 0 auto;">
+                    <tbody>
+                        <tr style="line-height: 13px; font-size: 11px">
+                          <td valign="middle" style="vertical-align: middle; padding-right:130px; ">
+                            <a href="https://www.outsourcia.com" style="text-decoration: none; color: rgb(131, 129, 138); margin: 0 2px 0px 0px;" target="_blank">
+                              <img height="13" alt="outsourcia" src="https://outsourcia-signature.netlify.app/assets/icons/site.png" style="vertical-align: middle;">
+                            </a>
+                          </td>
+                            <td valign="middle" style="vertical-align: middle;">
+                                <a href="https://twitter.com/Outsourcia" target="_blank" style="text-decoration: none; color: rgb(131, 129, 138); margin: 0 0px 0 10px;">
+                                    <img height="13" alt="Twitter" src="https://outsourcia-signature.netlify.app/assets/icons/x.png" style="vertical-align: middle;">
+                                </a>
+                            </td>
+                            <td valign="middle" style="vertical-align: middle">
+                                <a href="https://www.linkedin.com/company/groupe-outsourcia/" target="_blank" style="text-decoration: none; color: rgb(131, 129, 138); margin: 0 0px 0 10px;">
+                                    <img height="13" alt="linkedin" src="https://outsourcia-signature.netlify.app/assets/icons/in.png" style="vertical-align: middle;">
+                                </a>
+                            </td>
+                            <td valign="middle" style="vertical-align: middle;">
+                                <a href="https://web.facebook.com/Outsourcia" target="_blank" style="text-decoration: none; color: rgb(131, 129, 138); margin: 0 0px 0 10px;">
+                                    <img height="13" alt="facebook" src="https://outsourcia-signature.netlify.app/assets/icons/fb.png" style="vertical-align: middle;">
+                                </a>
+                            </td>
+                            <td valign="middle" style="vertical-align: middle;">
+                                <a href="https://www.instagram.com/outsourcia_maroc/" target="_blank" style="text-decoration: none; color: rgb(131, 129, 138); margin: 0 0px 0 10px;">
+                                    <img height="13" alt="instagram" src="https://outsourcia-signature.netlify.app/assets/icons/insta.png" style="vertical-align: middle;">
+                                </a>
+                            </td>
+                            <td valign="middle" style="vertical-align: middle; padding-left: 130px;">
+                              <a href="https://www.outsourcia.com" style="text-decoration: none; color: rgb(131, 129, 138); margin: 0 2px 0px 0px;" target="_blank">
+                                <img height="13" alt="obessession" src="https://outsourcia-signature.netlify.app/assets/icons/video.png" style="vertical-align: middle;">
+                              </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+
+            <td>
+              <table cellspacing="10" cellpadding="10" style="margin-top: 0; color: rgb(131, 129, 138); border-spacing: 5px;margin: 0 auto;">
+                  <tbody>
+                    <tr>
+                    </tr>
               </tbody>
-            </table>
-          </td>
+              </table>
+            </td>
         </tr>
 
         <tr v-if="data.consentement">
