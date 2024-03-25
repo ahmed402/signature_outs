@@ -430,7 +430,7 @@ function copy() {
         border="0"
       >
         <tr>
-          <td style="padding: 0px 1px 0px 0px">
+          <td style="padding: 0px 30px 0px 0px">
             <table
               cellspacing="0"
               cellpadding="0"
@@ -554,7 +554,7 @@ function copy() {
                 <table cellspacing="10" cellpadding="10" style="margin-top: 0; color: rgb(131, 129, 138); border-spacing: 5px;margin: 0 auto;">
                     <tbody>
                         <tr style="line-height: 13px; font-size: 11px">
-                          <td valign="middle" style="vertical-align: middle; padding-right:150px; ">
+                          <td valign="middle" style="vertical-align: middle; padding-right:80px; ">
                             <a href="https://www.outsourcia.com" style="text-decoration: none; color: rgb(131, 129, 138); margin: 0 2px 0px 0px;" target="_blank">
                               <img height="13" alt="outsourcia" src="https://outsourcia-signature.netlify.app/assets/icons/site.png" style="vertical-align: middle;">
                             </a>
@@ -575,12 +575,12 @@ function copy() {
                                 </a>
                             </td>
                             <td valign="middle" style="vertical-align: middle;">
-                                <a href="https://www.instagram.com/outsourcia_maroc/" target="_blank" style="text-decoration: none; color: rgb(131, 129, 138); margin: 0 25px 0 5px;">
+                                <a href="https://www.instagram.com/outsourcia_maroc/" target="_blank" style="text-decoration: none; color: rgb(131, 129, 138); margin: 0 60px 0 5px;">
                                     <img height="13" alt="instagram" src="https://outsourcia-signature.netlify.app/assets/icons/insta.png" style="vertical-align: middle;">
                                 </a>
                             </td>
-                            <td valign="middle" style="vertical-align: middle; padding-left: 80px;">
-                              <a href="https://www.outsourcia.com" style="text-decoration: none; color: rgb(131, 129, 138); margin: 0 20px 0px 0px;" target="_blank">
+                            <td valign="middle" style="vertical-align: middle; padding-left: 10px;">
+                              <a href="https://www.outsourcia.com" style="text-decoration: none; color: rgb(131, 129, 138); margin: 0 40px 0px 0px;" target="_blank">
                                 <img height="13" alt="obessession" src="https://outsourcia-signature.netlify.app/assets/icons/video.png" style="vertical-align: middle;">
                               </a>
                             </td>
