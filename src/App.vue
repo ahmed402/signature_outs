@@ -487,7 +487,7 @@ function copy() {
                       style="
                         font-family: Arial, sans-serif;
                         text-align: center;
-                        min-width: 200px;
+                        min-width: 150px;
                         font-weight: 700;
                         line-height: 16px;
                       "
