@@ -581,7 +581,7 @@ function copy() {
                             </td>
                             <td valign="middle" style="vertical-align: middle; padding-left: 10px;">
                               <a href="https://www.youtube.com/watch?v=eXqpfZY_3nk" style="text-decoration: none; color: rgb(131, 129, 138); margin: 0 40px 0px 0px;" target="_blank">
-                                <img height="13" alt="obessession" src="assets/icons/video_youtube.png" style="vertical-align: middle;">
+                                <img height="13" alt="obessession" src="https://outsourcia-signature.netlify.app/assets/icons/video_youtube.png" style="vertical-align: middle;">
                               </a>
                             </td>
                         </tr>
