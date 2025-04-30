@@ -507,7 +507,7 @@ function copy() {
                     <img
                       v-else-if="company == 'somezzo'"
                       :src="'https://outsourcia-signature.netlify.app/assets/logo_somezzo.png'"
-                      style="width: 145px; height: 50px"
+                      style="width: 160px; height: 50px"
                       alt="Logo SOMEZZO"
                     />
                     <img
