@@ -48,6 +48,8 @@ watch(company, (newCompany) => {
   data.value.listPays.map((e) => (data.value.pays[e].enabled = false));
   if (newCompany == "stefi") {
     data.value.pays.MADAGASCAR.enabled = true;
+  }else if (newCompany == "somezzo") {
+    data.value.pays.TUNISIE.enabled = true;
   } else {
     data.value.pays.FRANCE.enabled = true;
     data.value.pays.MAROC.enabled = true;
@@ -90,6 +92,7 @@ function copy() {
           >
             <option value="">OUTSOURCIA</option>
             <option value="stefi">STEFI</option>
+            <option value="somezzo">SOMEZZO</option>
           </select>
           <label
             for="company"
@@ -500,6 +503,12 @@ function copy() {
                       :src="'https://outsourcia-signature.netlify.app/assets/logo_stefi.png'"
                       style="width: 145px; height: 50px"
                       alt="Logo STEFI"
+                    />
+                    <img
+                      v-else-if="company == 'somezzo'"
+                      :src="'https://outsourcia-signature.netlify.app/assets/logo_somezzo.png'"
+                      style="width: 145px; height: 50px"
+                      alt="Logo SOMEZZO"
                     />
                     <img
                       v-else
